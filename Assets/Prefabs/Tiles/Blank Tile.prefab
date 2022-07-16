@@ -43,3 +43,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6243d52803702184cb2d3e81cdaceaf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileOptions:
+  - id: 32
+    tile: {fileID: 1874712296213444999, guid: 786cf60f354eb4842aba4c4085ef7de8, type: 3}
+  - id: 1
+    tile: {fileID: 4699223581925554598, guid: 32928a73d37f7f94cbc47a78c5d84c56, type: 3}
+  - id: 16
+    tile: {fileID: 386876162216582216, guid: 36a3237b5b423c64e9d4cf7b63f28dcd, type: 3}
+  - id: 4
+    tile: {fileID: 8068141605743433063, guid: ca7982b9a17847749912241618165fef, type: 3}
+  - id: 8
+    tile: {fileID: 3564284271078392550, guid: 3c951f38a00930640a2314a9ebe83cb4, type: 3}
+  - id: 2
+    tile: {fileID: 8159238306249490664, guid: 0fa50591212e333478f2a33143ed4c71, type: 3}
+  padding: 0.1
+  isSet: 0
+  id: 0
+  x: 0
+  z: 0
