@@ -30,6 +30,17 @@ public class Tile : MonoBehaviour
     public int x, z;
     MapMaker map;
 
+    public static Dictionary<String, TileOption.TileId> nameToId;
+
+    void Awake() {
+        nameToId.Add("Grass", TileOption.TileId.Grass);
+        nameToId.Add("Water", TileOption.TileId.Water);
+        nameToId.Add("Sand", TileOption.TileId.Sand);
+        nameToId.Add("Stone", TileOption.TileId.Stone);
+        nameToId.Add("Ocean", TileOption.TileId.Ocean);
+        nameToId.Add("Forest", TileOption.TileId.Forest);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
