@@ -47,12 +47,12 @@ public class PlayerController : MonoBehaviour
         var finalPos = new Vector3(transform.position.x + h, 0, transform.position.z + v);
         while (moveTimer < moveDuration) {
             moveTimer += Time.deltaTime;
-            var newPos = Vector3.Lerp(currPos, finalPos, moveTimer/moveDuration);
-            newPos.y = Mathf.Sin(Mathf.PI * moveTimer / moveDuration) * jumpHeight;
-            transform.position = newPos;
+            transform.position = Vector3.Lerp(currPos, finalPos, moveTimer/moveDuration);
+            visuals.transform.localPosition = new Vector3(0, 0.5f + Mathf.Sin(Mathf.PI * moveTimer / moveDuration) * jumpHeight, 0);
             yield return null;
         }
         transform.position = finalPos;
+        visuals.transform.localPosition = new Vector3(0, 0.5f, 0);
         canMove = true;
         yield return null;
     }
