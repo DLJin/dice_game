@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DiceRoller : MonoBehaviour
 {
     static Rigidbody rb;
     static GameObject gO;
+    private Keyboard keyboard;
     static Vector3 diceSpeed;
 
     static DiceState diceState;
@@ -32,6 +34,7 @@ public class DiceRoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        keyboard = Keyboard.current;
         diceSpeed = rb.velocity;
 
         // based on the velocity and position of the dice, we can define 3 unique states
@@ -46,28 +49,9 @@ public class DiceRoller : MonoBehaviour
             diceState = DiceState.stopped;
         }
 
-        if (Input.GetKeyDown (KeyCode.Space)) {
-            // if the dice is MOVING or STOPPED, pressing the space button should reset the dice to the STANBY state
-            if (diceState == DiceState.moving || diceState == DiceState.stopped) {
-                gO.transform.position = STARTING_POSITION;
-                rb.velocity = new Vector3 (0, 0, 0);
-                rb.isKinematic = true;
-                diceState = DiceState.standby;
-            }
-            // if the dice is in STANDBY, pressing the space button initiate a dice roll
-            else {
-                gO.transform.position = STARTING_POSITION;
-                rb.velocity = new Vector3 (0, 0, 0);
-                // turn gravity on
-                rb.isKinematic = false;
-
-                float dirX = Random.Range (0, 500);
-                float dirY = Random.Range (0, 500);
-                float dirZ = Random.Range (0, 500);
-                transform.rotation = Quaternion.identity;
-                rb.AddForce(transform.up * 300);
-                rb.AddTorque(dirX, dirY, dirZ);
-            }
+        // if space key is pressed, roll the dice
+        if (keyboard.spaceKey.wasPressedThisFrame) {
+            Roll();
         }
 
         if (diceState == DiceState.stopped) {
@@ -75,6 +59,30 @@ public class DiceRoller : MonoBehaviour
             RaycastHit hitData;
             Physics.Raycast(ray, out hitData);
             Debug.Log(hitData.collider.gameObject.name + " was hit with an upwards raycast!");
+        }
+    }
+
+    void Roll() {
+        // if the dice is MOVING or STOPPED, pressing the space button should reset the dice to the STANBY state
+        if (diceState == DiceState.moving || diceState == DiceState.stopped) {
+            gO.transform.position = STARTING_POSITION;
+            rb.velocity = new Vector3 (0, 0, 0);
+            rb.isKinematic = true;
+            diceState = DiceState.standby;
+        }
+        // if the dice is in STANDBY, pressing the space button initiate a dice roll
+        else {
+            gO.transform.position = STARTING_POSITION;
+            rb.velocity = new Vector3 (0, 0, 0);
+            // turn gravity on
+            rb.isKinematic = false;
+
+            float dirX = Random.Range (0, 500);
+            float dirY = Random.Range (0, 500);
+            float dirZ = Random.Range (0, 500);
+            transform.rotation = Quaternion.identity;
+            rb.AddForce(transform.up * 300);
+            rb.AddTorque(dirX, dirY, dirZ);
         }
     }
 }
