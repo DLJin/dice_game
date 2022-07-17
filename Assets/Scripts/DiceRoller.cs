@@ -59,6 +59,7 @@ public class DiceRoller : MonoBehaviour
             Ray ray = new Ray(gO.transform.position, Vector3.up);
             RaycastHit hitData;
             Physics.Raycast(ray, out hitData);
+            // TODO change this so it does something besides a debug log
             Debug.Log(hitData.collider.gameObject.name + " was hit with an upwards raycast!");
         }
     }
