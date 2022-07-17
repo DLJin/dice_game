@@ -28,6 +28,7 @@ public class DiceRoller : MonoBehaviour
         // this is to turn off gravity for the dice in the standby position
         rb.isKinematic = true;
         gO.transform.position = STARTING_POSITION;
+        transform.rotation = Quaternion.identity;
         diceState = DiceState.standby;
     }
 
@@ -58,6 +59,7 @@ public class DiceRoller : MonoBehaviour
             Ray ray = new Ray(gO.transform.position, Vector3.up);
             RaycastHit hitData;
             Physics.Raycast(ray, out hitData);
+            // TODO change this so it does something besides a debug log
             Debug.Log(hitData.collider.gameObject.name + " was hit with an upwards raycast!");
         }
     }
@@ -67,6 +69,7 @@ public class DiceRoller : MonoBehaviour
         if (diceState == DiceState.moving || diceState == DiceState.stopped) {
             gO.transform.position = STARTING_POSITION;
             rb.velocity = new Vector3 (0, 0, 0);
+            transform.rotation = Quaternion.identity;
             rb.isKinematic = true;
             diceState = DiceState.standby;
         }
