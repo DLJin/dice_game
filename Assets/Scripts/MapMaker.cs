@@ -44,6 +44,8 @@ public class MapMaker : MonoBehaviour
         while(toBeSelected.Count > 0) {
             collapse();
         }
+
+        Tile.printSelections();
     }
 
     public void collapse() {

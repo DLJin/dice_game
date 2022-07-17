@@ -47,17 +47,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileOptions:
   - id: 32
-    tile: {fileID: 1874712296213444999, guid: 786cf60f354eb4842aba4c4085ef7de8, type: 3}
+    tile:
+    - {fileID: 1874712296213444999, guid: 786cf60f354eb4842aba4c4085ef7de8, type: 3}
   - id: 1
-    tile: {fileID: 4699223581925554598, guid: 32928a73d37f7f94cbc47a78c5d84c56, type: 3}
+    tile:
+    - {fileID: 4699223581925554598, guid: 32928a73d37f7f94cbc47a78c5d84c56, type: 3}
   - id: 16
-    tile: {fileID: 386876162216582216, guid: 36a3237b5b423c64e9d4cf7b63f28dcd, type: 3}
+    tile:
+    - {fileID: 386876162216582216, guid: 36a3237b5b423c64e9d4cf7b63f28dcd, type: 3}
   - id: 4
-    tile: {fileID: 8068141605743433063, guid: ca7982b9a17847749912241618165fef, type: 3}
+    tile:
+    - {fileID: 8068141605743433063, guid: ca7982b9a17847749912241618165fef, type: 3}
   - id: 8
-    tile: {fileID: 3564284271078392550, guid: 3c951f38a00930640a2314a9ebe83cb4, type: 3}
+    tile:
+    - {fileID: 3564284271078392550, guid: 3c951f38a00930640a2314a9ebe83cb4, type: 3}
   - id: 2
-    tile: {fileID: 8159238306249490664, guid: 0fa50591212e333478f2a33143ed4c71, type: 3}
+    tile:
+    - {fileID: 8159238306249490664, guid: 0fa50591212e333478f2a33143ed4c71, type: 3}
+    - {fileID: 1352651070800213873, guid: 8f8f496788ac1bd448abeff204d761fc, type: 3}
+    - {fileID: 1534244590561734480, guid: d8ff1466440181d4cb3af30a94c84117, type: 3}
+    - {fileID: 8739469795947889346, guid: 02745d3293d49764aaa539a02fb5323c, type: 3}
+    - {fileID: 4840047330636312081, guid: bd0d4309777853d4b8365f1243845d27, type: 3}
   padding: 0.1
   isSet: 0
   id: 0

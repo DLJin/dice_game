@@ -19,8 +19,10 @@ public class Tile : MonoBehaviour
         }
 
         public TileId id;
-        public GameObject tile;
+        public GameObject[] tile;
     }
+
+    static Dictionary<TileOption.TileId, Dictionary<int, int>> selectionHistory = new Dictionary<TileOption.TileId, Dictionary<int, int>>();
 
     public List<TileOption> tileOptions;
     [Range(0f, 1f)]
@@ -75,11 +77,35 @@ public class Tile : MonoBehaviour
         // Select a random tile type amongst the valid choices
         var selected = tileOptions[UnityEngine.Random.Range(0, tileOptions.Count)];
         // This is where we can add some randomization later down the road, to insert different variants of the same tile type
-        var visuals = Instantiate(selected.tile, this.transform);
+        var variant = UnityEngine.Random.Range(0, selected.tile.Length);
+        var visuals = Instantiate(selected.tile[variant], this.transform);
         visuals.transform.localPosition = Vector3.down;
         id = selected.id;
         isSet = true;
+        GetComponent<TileAnimation>().findChildren();
+        logSelection(selected.id, variant);
 
         //Debug.Log($"Selected {Enum.GetName(typeof(TileOption.TileId), selected.id)} for location ({x}, {z}).");
+    }
+
+    void logSelection(TileOption.TileId id, int variant) {
+        if(!selectionHistory.ContainsKey(id)) {
+            selectionHistory.Add(id, new Dictionary<int, int>());
+        }
+        if(!selectionHistory[id].ContainsKey(variant)) {
+            selectionHistory[id].Add(variant, 0);
+        }
+        selectionHistory[id][variant] = selectionHistory[id][variant] + 1;
+    }
+
+    public static void printSelections() {
+        string output = "";
+        foreach(var id in selectionHistory.Keys) {
+            output += $"{Enum.GetName(typeof(TileOption.TileId), id)}:\n";
+            foreach(var variant in selectionHistory[id].Keys) {
+                output += $"\tVariant {variant}: {selectionHistory[id][variant]}\n";
+            }
+        }
+        Debug.Log(output);
     }
 }
