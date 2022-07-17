@@ -28,6 +28,7 @@ public class DiceRoller : MonoBehaviour
         // this is to turn off gravity for the dice in the standby position
         rb.isKinematic = true;
         gO.transform.position = STARTING_POSITION;
+        transform.rotation = Quaternion.identity;
         diceState = DiceState.standby;
     }
 
@@ -67,6 +68,7 @@ public class DiceRoller : MonoBehaviour
         if (diceState == DiceState.moving || diceState == DiceState.stopped) {
             gO.transform.position = STARTING_POSITION;
             rb.velocity = new Vector3 (0, 0, 0);
+            transform.rotation = Quaternion.identity;
             rb.isKinematic = true;
             diceState = DiceState.standby;
         }
