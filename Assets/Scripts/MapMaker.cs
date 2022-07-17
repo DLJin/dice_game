@@ -34,6 +34,7 @@ public class MapMaker : MonoBehaviour
                 // Add the new tile to the map
                 map[x,z] = newTile;
                 newTile.GetComponent<Tile>().setLocation(x, z);
+                newTile.name = $"{x}, {z}";
                 // Prepare a list of tiles that still need to be collapsed
                 toBeSelected.Add(newTile);
             }
@@ -171,7 +172,7 @@ public class MapMaker : MonoBehaviour
             var currentTile =  Enum.GetName(typeof(Tile.TileOption.TileId), current.id);
             var nextTileOptions = string.Join(", ", next.tileOptions.ConvertAll<string>(option => Enum.GetName(typeof(Tile.TileOption.TileId), option.id)));
             var validListOptions = string.Join(", ", validList.ToList().ConvertAll<string>(option => Enum.GetName(typeof(Tile.TileOption.TileId), option)));
-            Debug.LogWarning($"Propagating ({current.x}, {current.z}) to ({next.x}, {next.z}) would result in an empty tile.\nCurrent Tile: {currentTile} | Next Tile Options: {nextTileOptions} | Valid List: {validListOptions}");
+            // Debug.LogWarning($"Propagating ({current.x}, {current.z}) to ({next.x}, {next.z}) would result in an empty tile.\nCurrent Tile: {currentTile} | Next Tile Options: {nextTileOptions} | Valid List: {validListOptions}");
         } else {
             next.tileOptions = newOptionsList;
         }

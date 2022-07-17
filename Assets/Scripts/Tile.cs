@@ -41,7 +41,7 @@ public class Tile : MonoBehaviour
             nameToId.Add("Ocean", TileOption.TileId.Ocean);
             nameToId.Add("Forest", TileOption.TileId.Forest);
         }
-        
+
         if(nameToId.ContainsKey(name)) {
             return nameToId[name];
         }
@@ -75,7 +75,8 @@ public class Tile : MonoBehaviour
         // Select a random tile type amongst the valid choices
         var selected = tileOptions[UnityEngine.Random.Range(0, tileOptions.Count)];
         // This is where we can add some randomization later down the road, to insert different variants of the same tile type
-        Instantiate(selected.tile, this.transform);
+        var visuals = Instantiate(selected.tile, this.transform);
+        visuals.transform.localPosition = Vector3.down;
         id = selected.id;
         isSet = true;
 
