@@ -1,0 +1,299 @@
+{
+	"options": 
+	[
+		{
+			"tile": "Grass",
+			"up": 
+			[
+				{
+					"tile": "Grass",
+					"probability": 0.6
+				},
+				{
+					"tile": "Forest",
+					"probability": 0.4
+				}
+			],
+			"right": 
+			[
+				{
+					"tile": "Grass",
+					"probability": 0.3
+				},
+				{
+					"tile": "Forest",
+					"probability": 0.5
+				},
+				{
+					"tile": "Stone",
+					"probability": 0.2
+				}
+			],
+			"down": 
+			[
+				{
+					"tile": "Grass",
+					"probability": 0.5
+				},
+				{
+					"tile": "Water",
+					"probability": 0.1
+				},
+				{
+					"tile": "Sand",
+					"probability": 0.4
+				}
+			],
+			"left": 
+			[
+				{
+					"tile": "Grass",
+					"probability": 0.4
+				},
+				{
+					"tile": "Water",
+					"probability": 0.6
+				}
+			]
+		},
+		{
+			"tile": "Water",
+			"up": 
+			[
+				{
+					"tile": "Water",
+					"probability": 0.4
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.6
+				}
+			],
+			"right": 
+			[
+				{
+					"tile": "Water",
+					"probability": 0.7
+				},
+				{
+					"tile": "Stone",
+					"probability": 0.3
+				}
+			],
+			"down": 
+			[
+				{
+					"tile": "Water",
+					"probability": 0.6
+				},
+				{
+					"tile": "Ocean",
+					"probability": 0.4
+				}
+			],
+			"left": 
+			[
+				{
+					"tile": "Water",
+					"probability": 0.5
+				},
+				{
+					"tile": "Ocean",
+					"probability": 0.5
+				}
+			]
+		},
+		{
+			"tile": "Sand",
+			"up": 
+			[
+				{
+					"tile": "Sand",
+					"probability": 0.3
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.7
+				}
+			],
+			"right": 
+			[
+				{
+					"tile": "Sand",
+					"probability": 0.5
+				},
+				{
+					"tile": "Water",
+					"probability": 0.2
+				},
+				{
+					"tile": "Stone",
+					"probability": 0.3
+				}
+			],
+			"down": 
+			[
+				{
+					"tile": "Water",
+					"probability": 1
+				}
+			],
+			"left": 
+			[
+				{
+					"tile": "Sand",
+					"probability": 0.7
+				},
+				{
+					"tile": "Water",
+					"probability": 0.3
+				}
+			]
+		},
+		{
+			"tile": "Forest",
+			"up": 
+			[
+				{
+					"tile": "Forest",
+					"probability": 0.6
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.4
+				}
+			],
+			"right": 
+			[
+				{
+					"tile": "Forest",
+					"probability": 0.5
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.4
+				},
+				{
+					"tile": "Stone",
+					"probability": 0.1
+				}
+			],
+			"down": 
+			[
+				{
+					"tile": "Forest",
+					"probability": 0.4
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.6
+				}
+			],
+			"left": 
+			[
+				{
+					"tile": "Forest",
+					"probability": 0.3
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.7
+				}
+			]
+		},
+		{
+			"tile": "Ocean",
+			"up": 
+			[
+				{
+					"tile": "Ocean",
+					"probability": 0.4
+				},
+				{
+					"tile": "Water",
+					"probability": 0.6
+				}
+			],
+			"right": 
+			[
+				{
+					"tile": "Ocean",
+					"probability": 0.4
+				},
+				{
+					"tile": "Water",
+					"probability": 0.5
+				},
+				{
+					"tile": "Stone",
+					"probability": 0.1
+				}
+			],
+			"down": 
+			[
+				{
+					"tile": "Ocean",
+					"probability": 0.7
+				},
+				{
+					"tile": "Water",
+					"probability": 0.3
+				}
+			],
+			"left": 
+			[
+				{
+					"tile": "Ocean",
+					"probability": 0.8
+				},
+				{
+					"tile": "Water",
+					"probability": 0.2
+				}
+			]
+		},
+		{
+			"tile": "Stone",
+			"up": 
+			[
+				{
+					"tile": "Stone",
+					"probability": 1
+				}
+			],
+			"right": 
+			[
+				{
+					"tile": "Stone",
+					"probability": 0.4
+				},
+				{
+					"tile": "Forest",
+					"probability": 0.6
+				}
+			],
+			"down": 
+			[
+				{
+					"tile": "Stone",
+					"probability": 0.7
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.3
+				}
+			],
+			"left": 
+			[
+				{
+					"tile": "Stone",
+					"probability": 0.6
+				},
+				{
+					"tile": "Grass",
+					"probability": 0.4
+				}
+			]
+		}
+	]
+}
